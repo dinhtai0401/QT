@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+const configValue: any = import.meta.env.VITE_API_URL;
+
 export interface Temperature {
   latitude: number;
   longitude: number;
@@ -65,12 +67,9 @@ export const initialState: TemperatureState = {
 export const fetchTemperature = createAsyncThunk(
   'temperature/fetch',
   async (_thunkAPI) => {
-    const reponse = await fetch(
-      'https://api.open-meteo.com/v1/forecast?latitude=65.01&longitude=25.47&hourly=temperature_2m',
-      {
-        method: 'GET',
-      }
-    );
+    const reponse = await fetch(configValue, {
+      method: 'GET',
+    });
     const data = reponse.json();
     return data;
   }
@@ -80,7 +79,7 @@ export const fetchTemperatureF = createAsyncThunk(
   'temperature/fetchF',
   async (condition: string, _thunkAPI) => {
     const reponse = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=65.01&longitude=25.47&hourly=temperature_2m&temperature_unit=${condition}`,
+      `${configValue}&temperature_unit=${condition}`,
       {
         method: 'GET',
       }
@@ -97,7 +96,7 @@ export const fetchTemperatureOneDay = createAsyncThunk(
     let data: any;
     if (condition !== '-1') {
       reponse = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=65.01&longitude=25.47&hourly=temperature_2m&forecast_days=1&start_date=${condition}&end_date=${condition}`,
+        `${configValue}&forecast_days=1&start_date=${condition}&end_date=${condition}`,
         {
           method: 'GET',
         }
