@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-        with: 
-            run: npm install --force
+    #   - name: Install dependencies
+    #     uses: bahmutov/npm-install@v1
+
+      - run: npm install --force
 
       - name: Build project
         run: npm run build
