@@ -10,6 +10,7 @@ export default ({ mode }) => {
 
   return defineConfig({
     plugins: [react()],
+    base: '/QT/',
     test: {
       globals: true,
       environment: 'jsdom',
