@@ -16,7 +16,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './qt-react-ts/tsconfig.json',
+    project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
@@ -35,5 +35,6 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'no-param-reassign': 0,
     '@typescript-eslint/no-unused-expressions': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };
