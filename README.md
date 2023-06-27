@@ -1,6 +1,6 @@
 # QT TASK
 
-Junior-Fronend Assignment:
+Junior-Fronend Assignment: https://dinhtai0401.github.io/QT/
 
 ## Introduction
 
@@ -16,6 +16,10 @@ Requirments:
 - Display data to the table
     - Display 7 days only into the table. Day is sortable (optional)
     - Display details temperature for that day
+
+## Deployment
+
+- Github Action
 
 ## Technology
 
