@@ -25,7 +25,7 @@ Requirments:
 
 - Typescript as promming language
 - Vite as a web framework
-- React React-Redux Redux-Toolikt as a JavaScript library
+- React React-Redux Redux-Toolikt React-Router@v6 as a library
 - Tailwind-CSS Material-UI as a CSS library
 - Vitest as a testing framework
 
